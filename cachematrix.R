@@ -13,10 +13,14 @@ makeCacheMatrix <- function(x = matrix()) {
         get <- function() x
         setinverse <- function(inverse) m <<- inverse
         getinverse <- function() m
-        list(set = set, get = get,
-             setinverse = setinverse,
-             getinverse = getinverse)
+        list(set = set,  ##   - set the value of the matrix
+		     get = get,  ##   - get the value of the matrix
+             setinverse = setinverse,  ##   - set the value of the inverse matrix
+             getinverse = getinverse)  ##   - get the value of the inverse matrix
 }
+
+
+
 
 
 ## In this function I try to implement the code to inverse the matrix previously created by function makeCacheMatrix
