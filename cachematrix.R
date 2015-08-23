@@ -2,8 +2,17 @@
 ## makeCacheMatrix to cache a inverse matrix
 ## cachesolve to compute the inverse matrix created previously
 
-## In this function I try to implement the code to create a matrix and cache the inverse
 
+## Usage example:
+##
+# > source("ProgrammingAssignment2/cachematrix.R")
+# > my_matrix <- makeCacheMatrix(matrix(1:4, 2, 2))
+# > cacheSolve(my_matrix)
+     # [,1] [,2]
+# [1,]   -2  1.5
+# [2,]    1 -0.5
+
+## In this function I try to implement the code to create a matrix and cache the inverse
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
@@ -21,10 +30,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-
-
 ## In this function I try to implement the code to inverse the matrix previously created by function makeCacheMatrix
-
 cacheSolve <- function(x, ...) {
         # Return a matrix that is the inverse of 'x'
         m <- x$getinverse()
@@ -33,7 +39,7 @@ cacheSolve <- function(x, ...) {
                 return(m)
         }
         data <- x$get()
-        m <- inverse(data, ...)
+        m <- solve(data, ...)
         x$setinverse(m)
         m		
 }
